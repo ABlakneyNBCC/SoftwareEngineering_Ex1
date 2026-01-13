@@ -21,10 +21,10 @@
             // - If the provided age is less than 0, set the member's age to 0
             // - Otherwise, store the provided value
             // - Demonstrates a full property with a backing field and setter logic
-            if (age < 0)
+            if (value < 0)
                 age = 0;
             else
-                this.age = age;
+                age = value;
         }
     }
 
@@ -50,9 +50,9 @@
             // - Otherwise, store the provided value
             // - Demonstrates static full properties with validation logic
             if (value < 0)
-                value = 0;
+                totalBooksBorrowed = 0;
             else
-                value = value;
+                totalBooksBorrowed = value;
         }
     }
 
@@ -106,7 +106,7 @@
     // ============================
     // Private method to get max borrow limit for this member
     // TODO: Implement a private method to return the max number of books allowed
-    private int GetMaxBorrowLimit()
+    public int GetMaxBorrowLimit()
     {
         // Instructions:
         // - Check the MembershipLevel property
@@ -148,6 +148,7 @@
         else if (booksBorrowed == maxBorrow)
         {
             Console.WriteLine($"{Name} has reached their borrowing limit.");
+            return;
         }
     }
 
